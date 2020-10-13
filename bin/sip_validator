@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'sip_validator'
-
-SipValidator::Runner.run ARGV

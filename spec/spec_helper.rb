@@ -1,4 +1,4 @@
-require "sip_validator"
+require "ips_validator"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

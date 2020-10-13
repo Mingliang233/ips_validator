@@ -1,18 +1,18 @@
 require 'spec_helper'
 
-RSpec.describe "SipValidator::Validator"  do
+RSpec.describe "IpsValidator::Validator"  do
   let(:status) { 'Implemented' }
   
-  let(:sip){
+  let(:ips){
     {
-      sip: 7,
+      fip: 7,
       title: 'Oracle Trading Locks',
       author: 'Jackson Chan, Kain Warwick, Clinton Ennis',
       status: status,
       created: '2019-07-09'
     }
   }
-  subject(:validator){ SipValidator::Validator.new(sip)}
+  subject(:validator){ IpsValidator::Validator.new(ips)}
 
   describe "valid" do
     it "should have required fields" do
@@ -22,7 +22,7 @@ RSpec.describe "SipValidator::Validator"  do
 
   describe "missing fields" do
     it "raise error if required fields are missing" do
-      expect(SipValidator::Validator.new().valid?).to eq false
+      expect(IpsValidator::Validator.new().valid?).to eq false
     end
   end
 
@@ -36,12 +36,12 @@ RSpec.describe "SipValidator::Validator"  do
 
   describe "attribute with -" do
     it "is valid if specified" do
-      SipValidator::Validator.new(sip.merge({'discussions-to':'something'}))
+      IpsValidator::Validator.new(ips.merge({'discussions-to':'something'}))
     end
  
     it "not valid if not specified" do
       expect{
-        SipValidator::Validator.new(sip.merge({'how-to':'something'}))
+        IpsValidator::Validator.new(ips.merge({'how-to':'something'}))
       }.to raise_error(/unknown attribute/)
     end
   end
@@ -49,7 +49,7 @@ RSpec.describe "SipValidator::Validator"  do
   describe "attribute with _" do
     it "not valid" do
       expect{
-        SipValidator::Validator.new(sip.merge({'discussions_to':'something'}))
+        IpsValidator::Validator.new(ips.merge({'discussions_to':'something'}))
       }.to raise_error("discussions_to incude _ which is not allowed")
     end
   end
