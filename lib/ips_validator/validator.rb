@@ -16,17 +16,12 @@ module IpsValidator
     end
 
     include ActiveModel::Model
-    attr_accessor :ips, :fip, :title, :author, :status, :created, :updated
+    attr_accessor :fip, :title, :author, :status, :created, :updated
     attr_accessor :replaces, :requires, :layer, :resolution
     # replace - with _
     attr_accessor :discussions_to, :superseded_by, :review_period_end
     validates_presence_of :title, :author, :status, :created
-    validates :ips,
-              presence: true,
-              unless: ->(v){v.fip.present?}
-    validates :fip, 
-              presence: true, 
-              unless: ->(v){v.ips.present?}
+    validates :fip, presence: true
     validates_inclusion_of :status, in: ['WIP', 'Proposed', 'Approved', 'Implemented', 'Rejected']
   end
 end

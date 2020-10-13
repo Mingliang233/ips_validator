@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Bakaoh"]
   spec.email         = ["@bakaoh"]
 
-  spec.summary       = "Small library to check if Improvement Proposals(IPs) has valid format"
-  spec.homepage      = "https://github.com/bakaoh/ips_validator"
+  spec.summary       = "Small library to check if Improvement Proposals(IPs) have valid front matter"
+  spec.homepage      = "https://github.com/thefortube"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
