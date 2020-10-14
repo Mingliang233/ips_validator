@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["@bakaoh"]
 
   spec.summary       = "Small library to check if Improvement Proposals(IPs) have valid front matter"
-  spec.homepage      = "https://github.com/thefortube"
+  spec.homepage      = "https://github.com/thefortube/ips_validator"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

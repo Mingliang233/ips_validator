@@ -1,4 +1,4 @@
-# FIP validator
+# ips_validator
 [![Gem](https://img.shields.io/gem/v/ips_validator.svg?style=flat)](http://rubygems.org/gems/ips_validator "View this project in Rubygems")
 
 
@@ -6,7 +6,7 @@
 
 ### Mandatory fields
 
-- fip
+- ips(your name)
 - title
 - author
 - status
@@ -25,15 +25,15 @@
 
 ### Mandatory values
 
-- `status` must be:
-	* 'WIP'
-	* 'Proposed'
-	* 'Approved'
-	* 'Implemented'
-	* 'Withdrawn'
-	* 'Deferred'
-	* 'Rejected'
-	* 'Moribund'
+`status` must be:
+* 'WIP'
+* 'Proposed'
+* 'Approved'
+* 'Implemented'
+* 'Withdrawn'
+* 'Deferred'
+* 'Rejected'
+* 'Moribund'
 
 ## Prerequisite
 
@@ -48,7 +48,7 @@ gem install ips_validator
 ## Usage (command line)
 
 ```ruby
-ips_validator INPUT_FILES
+ips_validator ips INPUT_FILES
 ```
 
 ## Usage (as a lib)
@@ -62,7 +62,7 @@ IpsValidator::Runner.run
 ### Example
 
 ```
-$ips_validator  ~/src/FIPS/*[0-9].md
+$ips_validator fip ~/src/FIPS/*[0-9].md
 
 total:1, valid:1, invalid:0, errors:0
 	statuses: [["Implemented", 1]]

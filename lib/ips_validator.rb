@@ -5,7 +5,7 @@ require 'ips_validator/validator'
 module IpsValidator
   class Runner
     class << self  
-      def run(file_names)
+      def run(args)
         num_valid = 0
         num_invalid = 0
         num_error = 0
@@ -15,11 +15,15 @@ module IpsValidator
         types = []
         categories = []
         layers = []
+        xip = args[0].to_sym
+        file_names = args[1..-1]
+        
         file_names.map do |file_name|
           attributes = Loader.load(file_name)
           total+=1
           begin 
-            v = Validator.new(attributes)
+            validator = ValidatorFactory.make(xip)
+            v = validator.new(attributes)
             if v.valid?
               num_valid+=1      
             else
